@@ -8,5 +8,13 @@
   <body>
     <div id="app"></div>
     <!-- built files will be auto injected -->
+    <script>
+       //获取浏览器窗口文档显示区域的宽度
+      var htmlwidh=document.documentElement.clientWidth||document.body.clientWidth;
+      // 获取html标签
+      var htmlDom=document.getElementsByTagName('html')[0];
+      // 动态设置html的字体大小
+      htmlDom.style.fontSize=htmlwidh/10+'px';
+    </script>
   </body>
 </html>
