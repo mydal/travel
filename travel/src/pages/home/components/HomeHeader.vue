@@ -9,13 +9,18 @@
    	    </div>
         <div class="header-right">
         	<span class="iconfont iconxiajiantou"></span>
-        	北京
+        	{{city}}
         </div>
     </div>
 </template>
 <script>
 export default {
-    name:"HomeHeader"
+    name:"HomeHeader",
+    props:{
+    	city:{
+    		type:String
+    	}
+    }
 }
 </script>
 <style lang="stylus" scoped>

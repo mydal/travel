@@ -5,10 +5,10 @@
 			<p>猜你喜欢</p>
 		</div>
 		<div class="item" v-for="(item,index) in recommendList" :key="item.id">
-			<img :src="item.pic" alt="">
+			<img :src="item.imgUrl" alt="">
 			<div class="info">
 				<h3 class="title">{{item.title}}</h3>
-				<p class="conent">{{item.conent}}</p>
+				<p class="conent">{{item.desc}}</p>
 				<button class="btn">查看详情</button>
 			</div>
 		</div>
@@ -20,33 +20,13 @@
 		name:'HomeRecommend',
 		data(){
 			return {
-				recommendList:[
-					{
-						id:1,
-						pic:"http://img1.qunarzz.com/sight/p0/1910/6a/6a22d154133b1422a3.water.jpg_200x200_eebf77fd.jpg",
-						title:"北京杜莎夫人蜡像馆",
-						conent:"欢迎来到北京杜莎夫人蜡像馆独有的'中国精神'主题展区！"
-					},
-					{
-						id:2,
-						pic:"http://img1.qunarzz.com/sight/p0/1903/5d/5dcaf453dfd6f5dba3.img.jpg_200x200_51d03f19.jpg",
-						title:"古北水镇",
-						conent:"古北口，地处京师咽喉要塞，正黄旗在此守卫古北雄关。"
-					},
-					{
-						id:3,
-						pic:"http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg",
-						title:"故宫",
-						conent:"还记得影视剧中，皇帝上朝的金銮殿嘛？金銮殿名为太和殿，是皇帝登基和举行大典的地方。"
-					},
-					{
-						id:4,
-						pic:"http://img1.qunarzz.com/sight/p0/1602/67/67feeab24cfc82bb90.water.jpg_200x200_af2a01b1.jpg",
-						title:"太平洋海底世界",
-						conent:"海底隧道是太平洋海底世界的主体部分,采用封闭式环形亚克力透明隧道设计。"
-					}
-				]
+				
 
+			}
+		},
+		props:{
+			recommendList:{
+				type:Array
 			}
 		}
 	}
