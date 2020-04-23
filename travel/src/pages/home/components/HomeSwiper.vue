@@ -16,8 +16,9 @@ export default {
     		swiperOption:{
     			pagination:".swiper-pagination",
     			loop:true,
-    			autoplay: 2000,
-
+                autoplay: 2000,
+                //手动滑动后 还可以自动轮播
+                autoplayDisableOnInteraction : false
     		},
     		swiperList:[
     			{
