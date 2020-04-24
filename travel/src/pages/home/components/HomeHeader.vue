@@ -7,10 +7,14 @@
        	 	<span class="iconfont">&#xe782;</span>
        	 	请输入景点/城市
    	    </div>
-        <div class="header-right">
-        	<span class="iconfont iconxiajiantou"></span>
-        	{{city}}
-        </div>
+   	    <router-link to="/city" class="router-link">
+   	    	  <div class="header-right">
+        		<span class="iconfont iconxiajiantou"></span>
+        		{{city}}
+        	</div>
+   	    	
+   	    </router-link>
+      
     </div>
 </template>
 <script>
@@ -48,4 +52,7 @@ export default {
     		line-height:0.8rem;
     		border-radius:0.133333rem;
     		color:#ccc;
+    	.router-link
+    		text-decoration:none
+    		color:#000
 </style>
