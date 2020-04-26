@@ -19,132 +19,21 @@
 				</div>
 				<div class="button-lists">
 					<ul>
-						<li>
-							<a href="#">北京</a>
-						</li>
-						<li>
-							<a href="#">上海</a>
-						</li>
-						<li>
-							<a href="#">天津</a>
-						</li>
-						<li>
-							<a href="#">杭州</a>
-						</li>
-						<li>
-							<a href="#">苏州</a>
-						</li>
-						<li>
-							<a href="#">广州</a>
-						</li>
-						<li>
-							<a href="#">西安</a>
-						</li>
-						<li>
-							<a href="#">深圳</a>
-						</li>
-						<li>
-							<a href="#">厦门</a>
-						</li>
-						<li>
-							<a href="#">三亚</a>
-						</li>
-						<li>
-							<a href="#">大理</a>
-						</li>
-						<li>
-							<a href="#">桂林</a>
+						<li v-for="(item,index) in hotCities" :key="item.id">
+							<a href="#">{{item.name}}</a>
 						</li>
 					
 					</ul>
 				</div>
 			</div>
-			<div class="area">
+			<div class="area" v-for="(item,index) in cities" :key="index" :ref="index">
 				<div class="title border-topbottom">
-					A
+					{{index}}
 				</div>
 				<div class="button-lists">
 					<ul>
-						<li>
-							<a href="#">阿勒泰</a>
-						</li>
-						<li>
-							<a href="#">北京</a>
-						</li>
-						<li>
-							<a href="#">北京</a>
-						</li>
-						<li>
-							<a href="#">北京</a>
-						</li>
-						<li>
-							<a href="#">北京</a>
-						</li>
-						<li>
-							<a href="#">北京</a>
-						</li>
-						<li>
-							<a href="#">北京</a>
-						</li>
-						<li>
-							<a href="#">北京</a>
-						</li>
-						<li>
-							<a href="#">北京</a>
-						</li>
-						<li>
-							<a href="#">北京</a>
-						</li>
-						<li>
-							<a href="#">北京</a>
-						</li>
-						<li>
-							<a href="#">北京</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-			<div class="area">
-				<div class="title border-topbottom">
-					A
-				</div>
-				<div class="button-lists">
-					<ul>
-						<li>
-							<a href="#">阿勒泰</a>
-						</li>
-						<li>
-							<a href="#">北京</a>
-						</li>
-						<li>
-							<a href="#">北京</a>
-						</li>
-						<li>
-							<a href="#">北京</a>
-						</li>
-						<li>
-							<a href="#">北京</a>
-						</li>
-						<li>
-							<a href="#">北京</a>
-						</li>
-						<li>
-							<a href="#">北京</a>
-						</li>
-						<li>
-							<a href="#">北京</a>
-						</li>
-						<li>
-							<a href="#">北京</a>
-						</li>
-						<li>
-							<a href="#">北京</a>
-						</li>
-						<li>
-							<a href="#">北京</a>
-						</li>
-						<li>
-							<a href="#">北京</a>
+						<li v-for="(v,k) in item" :key="v.id">
+							<a href="#">{{v.name}}</a>
 						</li>
 					</ul>
 				</div>
@@ -160,13 +49,34 @@ import Bscroll from 'better-scroll'
 
 			}
 		},
+		props:{
+			cities:Object,
+			hotCities:Array,
+			letter:String
+		},
 		mounted(){
 			this.scroll=new Bscroll(this.$refs.wrapper)
+		},
+		watch:{
+			letter(){
+				console.log(this.letter);
+				if(this.letter){
+					const element=this.$refs[this.letter][0];
+					console.log(element);
+					this.scroll.scrollToElement(element);
+				}
+			}
 		}
 	}
 </script>
 <style lang="stylus" scoped>
 	.list
+		position:absolute
+		top:2.4rem
+		right:0
+		left:0
+		bottom:0
+		overflow:hidden
 		width:100%
 		background-color:#eee
 		font-size:0.426667rem
