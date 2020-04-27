@@ -24,7 +24,7 @@
     "vue-better-scroller": "^0.1.1-bata1",
     "vue-router": "^3.0.1",
     "vuex": "^3.3.0",
-    "webpack-dev-server": "^2.9.1"
+    "webpack-dev-server": "^3.1.11"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
