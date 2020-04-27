@@ -8,7 +8,7 @@
 				<div class="button-list">
 					<div class="button-wrapper">
 						<div class="button">
-							北京
+							{{this.$store.state.city}}
 						</div>
 					</div>
 				</div>
@@ -20,7 +20,9 @@
 				<div class="button-lists">
 					<ul>
 						<li v-for="(item,index) in hotCities" :key="item.id">
-							<a href="#">{{item.name}}</a>
+							<router-link to="/home">
+								<a href="" @click="handleClick(item.name)">{{item.name}}</a>
+							</router-link>
 						</li>
 					
 					</ul>
@@ -33,7 +35,10 @@
 				<div class="button-lists">
 					<ul>
 						<li v-for="(v,k) in item" :key="v.id">
-							<a href="#">{{v.name}}</a>
+							<router-link to="/home">
+								<a href="#" @click="handleClick(v.name)">{{v.name}}</a>
+							</router-link>
+							
 						</li>
 					</ul>
 				</div>
@@ -65,6 +70,12 @@ import Bscroll from 'better-scroll'
 					console.log(element);
 					this.scroll.scrollToElement(element);
 				}
+			}
+		},
+		methods:{
+			handleClick(city){
+				console.log(city);
+				this.$store.dispatch('changecity',city);
 			}
 		}
 	}

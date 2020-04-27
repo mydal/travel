@@ -23,6 +23,7 @@
     "vue-awesome-swiper": "^2.6.7",
     "vue-better-scroller": "^0.1.1-bata1",
     "vue-router": "^3.0.1",
+    "vuex": "^3.3.0",
     "webpack-dev-server": "^2.9.1"
   },
   "devDependencies": {

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <home-header :city="city"></home-header>
+        <home-header></home-header>
         <home-swiper :swiperList="swiperList"></home-swiper>
         <home-icons :iconsList="iconsList"></home-icons>
         <home-recommend :recommendList="recommendList"></home-recommend>
@@ -19,7 +19,6 @@ export default {
     name:"Home",
     data(){
     	return{
-    		city:'',
     		recommendList:[],
     		swiperList:[],
     		iconsList:[],
@@ -37,12 +36,12 @@ export default {
     	getHomeInfo(){
     		axios.get('/static/mock/index.json').then((res)=>{
     			if(res.data.ret&&res.data.data){
-    				console.log(res);
-    				this.city=res.data.city;
+    				// console.log(res);
     				this.recommendList=res.data.data.recommendList;
     				this.swiperList=res.data.data.swiperList;
     				this.iconsList=res.data.data.iconsList;
     				this.weekList=res.data.data.weekList;
+    				console.log(res);
     			}
     		})
     	}
