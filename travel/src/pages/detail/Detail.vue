@@ -10,8 +10,6 @@ import axios from 'axios'
 import DetailHeader from './components/DetailHeader'
 import DetailRecommend from './components/DetailRecommend'
 import DetailRelation from './components/DetailRelation'
-
-
 	export default{
 		name:'Detail',
 		data(){
@@ -35,7 +33,6 @@ import DetailRelation from './components/DetailRelation'
     					this.DetailList=res.data.data.detailList;
     					this.Detailrecom=res.data.data.detailRecom;
     					this.Detailrelation=res.data.data.detailRelation;
-    					
     				}
     					console.log(res);
 
@@ -44,7 +41,7 @@ import DetailRelation from './components/DetailRelation'
 	    },
 	   mounted:function(){
    			this.getHomeInfo();
-   			this.id=this.$route.query.id;
+   			this.id=this.$route.params.id;
    			// console.log(this.$route.query.id);
 			 console.log(this.id);
    	 	},

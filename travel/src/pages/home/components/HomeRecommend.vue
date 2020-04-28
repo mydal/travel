@@ -9,7 +9,7 @@
 			<div class="info">
 				<h3 class="title">{{item.title}}</h3>
 				<p class="conent">{{item.desc}}</p>
-				<router-link :to="{path:'/detail/'+item.id,query:{id:item.id}}">
+				<router-link :to="{name:'Detail',params:{id:item.id}}">
 					<button class="btn">查看详情</button>	
 				</router-link>
 			</div>
